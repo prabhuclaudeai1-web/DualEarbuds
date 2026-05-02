@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4FF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="🎧"
+                android:textSize="36sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="Dual Earbuds Connect"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:text="Connect two earbuds simultaneously"
+                android:textSize="13sp"
+                android:textColor="#666688"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- DUAL AUDIO STATUS -->
+        <LinearLayout
+            android:id="@+id/card_dual_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1A237E"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="Dual Audio Mode"
+                android:textSize="13sp"
+                android:textColor="#9FA8DA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/tv_dual_status"
+                    android:text="⚡ Checking..."
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_enable_dual"
+                    android:text="Enable"
+                    android:textSize="12sp"
+                    android:textColor="#1A237E"
+                    android:background="#E8EAF6"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="enableDualAudio"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dual_note"
+                android:text="Enables Bluetooth Dual Audio in Developer Options"
+                android:textSize="11sp"
+                android:textColor="#7986CB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+
+        <!-- EARBUD 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:text="🎧"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:text="Earbud 1"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_status1"
+                    android:text="Not saved"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_device1"
+                android:text="No device saved"
+                android:textSize="13sp"
+                android:textColor="#444466"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5FF"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_scan1"
+                    android:text="📡 Scan &amp; Save"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="#3949AB"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="scanForDevice1"/>
+
+                <Button
+                    android:id="@+id/btn_connect1"
+                    android:text="Connect"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="#00897B"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="connectDevice1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- EARBUD 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:text="🎧"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:text="Earbud 2"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A1A2E"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_status2"
+                    android:text="Not saved"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_device2"
+                android:text="No device saved"
+                android:textSize="13sp"
+                android:textColor="#444466"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5FF"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_scan2"
+                    android:text="📡 Scan &amp; Save"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="#3949AB"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="scanForDevice2"/>
+
+                <Button
+                    android:id="@+id/btn_connect2"
+                    android:text="Connect"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="#00897B"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="connectDevice2"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CONNECT BOTH -->
+        <Button
+            android:id="@+id/btn_connect_both"
+            android:text="⚡  CONNECT BOTH EARBUDS"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="#C62828"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:onClick="connectBoth"/>
+
+        <!-- OPEN BT SETTINGS -->
+        <Button
+            android:id="@+id/btn_bt_settings"
+            android:text="🔧  Open Bluetooth Settings"
+            android:textSize="13sp"
+            android:textColor="#3949AB"
+            android:background="#E8EAF6"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:onClick="openBtSettings"/>
+
+        <!-- OPEN DEV OPTIONS -->
+        <Button
+            android:id="@+id/btn_dev_opts"
+            android:text="⚙️  Developer Options (for Dual Audio)"
+            android:textSize="13sp"
+            android:textColor="#3949AB"
+            android:background="#E8EAF6"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="openDevOptions"/>
+
+        <!-- SCAN RESULTS -->
+        <LinearLayout
+            android:id="@+id/scan_results_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:text="Nearby Bluetooth Devices"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/scan_results_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="8dp"/>
+        </LinearLayout>
+
+        <!-- STATUS LOG -->
+        <TextView
+            android:id="@+id/tv_log"
+            android:text="Ready. Tap Scan to find your earbuds."
+            android:textSize="12sp"
+            android:textColor="#555577"
+            android:background="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- HOW TO USE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8EAF6"
+            android:padding="14dp"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:text="ℹ️  How to use"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:text="1. First pair BOTH earbuds in Android Bluetooth Settings\n2. Come back here, tap Scan for each earbud slot\n3. Select the device from the list to save it\n4. Enable Dual Audio (Developer Options)\n5. Tap CONNECT BOTH to connect simultaneously\n\nNote: Both earbuds must be paired in Android settings first before this app can connect them."
+                android:textSize="12sp"
+                android:textColor="#3949AB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
